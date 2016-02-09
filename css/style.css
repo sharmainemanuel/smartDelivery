@@ -1,0 +1,79 @@
+/* Empty. Add your own CSS if you like */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2') format('woff2'), url('../fonts/fontawesome-webfont.woff') format('woff'), url('../fonts/fontawesome-webfont.ttf') format('truetype'), url('../fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+	font-family: 'Lato';
+	src: url('../fonts/Lato-Regular.ttf') format('opentype');
+	font-weight: normal;
+  	font-style: normal;
+}
+@font-face{
+	font-family: 'Lato';
+	src: url('../fonts/Lato-Bold.ttf') format('opentype');
+	font-weight: normal;
+  	font-style: normal;
+}
+@font-face{
+	font-family: 'Lato';
+	src: url('../fonts/Lato-Italic.ttf') format('opentype');
+	font-weight: normal;
+  	font-style: normal;
+}
+@font-face{
+	font-family: 'Lato';
+	src: url('../fonts/Lato-Light.ttf') format('opentype');
+	font-weight: normal;
+  	font-style: normal;
+}
+
+*{
+	font-family: 'Lato', sans-serif;
+}
+
+.title-center{text-align: center;}
+.icon-building:before{font-family: 'FontAwesome';content: '\f1ad';}
+.icon-product-hunt:before{font-family: 'FontAwesome';content: '\f288';font-size: 0.8em;}
+.icon-user:before{font-family: 'FontAwesome';content: '\f007';}
+.icon-signout:before{font-family: 'FontAwesome';content: '\f08b';}
+.icon-settings:before{font-family: 'FontAwesome';content: '\f013';}
+.icon-about:before{font-family: 'FontAwesome';content: '\f05a';}
+.icon-plus:before{font-family: 'FontAwesome';content: '\f055';}
+.icon-close:before{font-family: 'FontAwesome';content: '\f00d';}
+.icon-update:before{font-family: 'FontAwesome';content: '\f044';} 
+.icon-left:before{font-family: 'FontAwesome';content: '\f060';}
+.icon-check:before{font-family: 'FontAwesome';content: '\f14a';}
+.icon-cart:before{font-family: 'FontAwesome';content: '\f217';}
+.icon-search:before{font-family: 'FontAwesome';content: '\f002';}
+.icon-location:before{font-family: 'FontAwesome';content: '\f041';} 
+.icon-product-hunt{padding:5px !important;}
+.icon-tab{font-size: 0.5em;}
+.icon-lg {font-size: 1.33333333em;line-height: 0.75em;vertical-align: -15%;}.icon-2x {font-size: 2em;}.icon-3x {font-size: 3em;}.icon-4x {font-size: 4em;}.icon-5x {font-size: 5em;}
+
+
+/*custom*/
+.item-profile{
+	background:#0d47a1;height:180px;padding:0px 35px 0px 0px;text-align:center;
+}
+.mybadge{background:orange;border-radius:30px;width:40px;margin-top:10px;height:25px;display:inline-block;padding:10px;text-align: center;}
+.text-white{color:#fff;}
+.item-image{max-width: 200px;}
+.center-block{display:block;margin-left: auto;margin-right: auto;}
+.dark-theme-background{background: #20252b;}
+.dark-theme-card{background: #222931 !important;}
+.dark-theme-card-whiter{background: #616161 !important;}
+.dark-theme-text{background: #525c68;}
+.dark-theme-active{background: #0091ff;}
+/*login*/
+.header-login{transform:translatey(5%);}
+.header-login img{display:block;margin-left:auto;margin-right:auto;}
+.header-login h2{margin-top: 0px;color:white;}
+.login-form span{color:white;}
+.login-form input[type=text]{width:100%;border-radius:5px;padding-left:10px;margin-bottom:15px;}
+.login-form input[type=password]{width:100%;border-radius:5px;padding-left:10px;margin-bottom:15px;}
+.center-block-button{margin-left:auto;margin-right:auto;}

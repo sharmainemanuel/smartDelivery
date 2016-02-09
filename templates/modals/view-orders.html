@@ -1,0 +1,17 @@
+<ion-modal-view>
+	<ion-header-bar>
+	  <h1 class="title">{{myTitle}}</h1>
+	  <div class="button button-clear" ng-click="modal.hide()">
+	  	<span class="icon ion-close"></span>
+	  </div>
+	</ion-header-bar>
+	<ion-content>
+	  <div class="list">
+	    <a class="item item-avatar" ng-repeat="x in haha">
+	      <img src="{{x.productImg}}" alt="">
+	      <h2>{{x.productname}}</h2>
+	      <h2>Total: {{x.productprice}}</h2>
+	    </a>
+	</div>
+	</ion-content>
+</ion-modal-view>

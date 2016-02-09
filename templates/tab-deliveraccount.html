@@ -1,0 +1,27 @@
+<ion-view view-title="Account">
+  <ion-content>
+    <div class="list">
+      <li class="item item-toggle">
+	     Available
+	     <label class="toggle toggle-assertive">
+	       <input type="checkbox" ng-model="statuses" ng-change="updateStatus()">
+	       <div class="track">
+	         <div class="handle"></div>
+	       </div>
+	     </label>
+	  </li>
+	  <a class="item item-icon-left" href="#">
+	    <i class="icon icon-settings"></i>
+	    Account Settings
+	  </a>
+	  <a class="item item-icon-left" href="#">
+	    <i class="icon icon-about"></i>
+	    About
+	  </a>
+	  <a class="item item-icon-left" href="#" ng-click="logOut()">
+	    <i class="icon icon-signout"></i>
+	    Logout
+	  </a>
+	</div>
+  </ion-content>
+</ion-view>

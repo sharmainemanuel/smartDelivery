@@ -1,0 +1,15 @@
+<ion-modal-view>
+	<ion-header-bar >
+	  <h1 class="title">{{myTitle}}</h1>
+	  <div class="button button-clear" ng-click="modal.hide()">
+	  	<span class="icon ion-close"></span>
+	  </div>
+	</ion-header-bar>
+	<ion-content>
+	  <div class="list">
+	    <li class="item" ng-repeat="x in province" ng-click="getData(x.name)">
+	    {{x.name}}
+	    </li>
+	</div>
+	</ion-content>
+</ion-modal-view>

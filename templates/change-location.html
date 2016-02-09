@@ -1,0 +1,19 @@
+<ion-view view-title="Account">
+  <ion-nav-buttons side="left">
+    <button class="button" ng-click="$ionicGoBack()"><i class="ion-arrow-left-c"></i> Back</button>
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="list">
+	  <a class="item item-icon-left" ng-click="openModal('Select Province')">
+	    {{location.province}}
+	  </a>
+	  <a class="item item-icon-left" ng-click="openModalTwo('Select City')">
+	    {{location.city}}
+	  </a>
+
+	  <div class="padding">
+	    <button class="button button-positive button-block" ng-click="setLocation()">Change Location</button>
+	  </div>
+	</div>
+  </ion-content>
+</ion-view>

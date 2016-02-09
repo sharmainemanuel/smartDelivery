@@ -1,0 +1,15 @@
+<ion-modal-view>
+	<ion-header-bar>
+	  <h1 class="title">{{myTitle}}</h1>
+	  <div class="button button-clear" ng-click="closeModalTwo()">
+	  	<span class="icon ion-close"></span>
+	  </div>
+	</ion-header-bar>
+	<ion-content>
+	  <div class="list">
+	    <a class="item item-avatar" ng-repeat="x in ct" ng-click="setCity(x.name,x.zip)">
+	      <h2>{{x.name}}</h2>
+	    </a>
+	</div>
+	</ion-content>
+</ion-modal-view>

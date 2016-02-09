@@ -1,0 +1,22 @@
+  	<ion-view view-title="Delivered">
+	  <ion-content class="padding">
+	  <ion-refresher
+		    pulling-text="Pull to refresh..."
+		    on-refresh="doRefresh()">
+		  </ion-refresher>
+	    <div class="list card" ng-repeat="p in delivered">
+	      <div class="item">
+	        <h3>{{p.userfname + " " + p.userlname}}</h3>
+	        <h2>{{p.address + " " + p.city + ", " + p.zip}}</h2>
+	        <p>{{p.merchantAddress}}</p>
+	      </div>
+
+	      <a class="item item-icon-left assertive" style="padding:0" href="#">
+	        <div class="row row-center" style="text-align:center">
+	          <div class="col col-50"><b>Price: </b><span>{{p.totalAmount | currency:"Php. "}}</span></div>
+	          <div class="col col-50"><b class="balanced">Status</b><br><span class="balanced">Delivered</span></div>
+	        </div>
+	      </a>
+	    </div>
+	  </ion-content>
+	</ion-view>

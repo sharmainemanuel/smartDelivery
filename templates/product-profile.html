@@ -1,0 +1,34 @@
+<ion-view view-title="{{product.productname}}" align-title="left">
+    <ion-content>
+		<div class="list">
+		  <div class="item item-image center-block">
+		    <img src="{{product.pimage}}">
+		  </div>
+
+		  <a class="item" style="text-align:center">
+		  	<h2>Description</h2>
+		    <h3>{{product.pprice | currency:"Php. "}}</h3>
+		  </a>
+
+		  <a class="item balanced" style="text-align:center;background:#4caf50">
+		    <h2 class="text-white">Quantity</h2>
+		  </a>
+
+		  <a class="item balanced" style="text-align:center;">
+		    <button class="button button-assertive" ng-click="decrementQty()">
+			  -
+			</button>
+			<input type="text" value="{{qty}}" style="display:inline;width:50px;height:40px;text-align:center;font-weight:bold" readonly>
+			<button class="button button-positive" ng-click="incrementQty()">
+			  +
+			</button>
+		  </a>
+		</div>
+    </ion-content>
+    <div class="bar bar-subfooter" style="padding:0;bottom:70px;">
+		<button class="button button-large button-positive button-full" ng-if="!productExist" style="padding:10px" ng-click="addToCart()">	<span class="icon-cart icon-lg"> Add To Cart</span>
+		</button>
+		<button class="button button-large button-positive button-full" ng-if="productExist" style="padding:10px" ng-click="updateCart()">	<span class="icon-cart icon-lg"> Update Cart</span>
+		</button>
+	</div>
+</ion-view>

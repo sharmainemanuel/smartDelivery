@@ -1,0 +1,22 @@
+  	<ion-view view-title="Dashboard">
+	  <ion-content class="padding">
+	  	<ion-refresher
+		    pulling-text="Pull to refresh..."
+		    on-refresh="doRefresh()">
+		  </ion-refresher>
+	    <div class="list card" ng-repeat="p in dispatch" ng-click="openModal('View Orders',p.purchaseDate,p.customerId)">
+	      <div class="item">
+	        <h3>{{p.userfname + " " + p.userlname}}</h3>
+	        <h2>{{p.address + " " + p.city + ", " + p.zip}}</h2>
+	        <h2>{{p.purchaseDate}}</h2>
+	      </div>
+
+	      <a class="item item-icon-left assertive" style="padding:0" href="#">
+	        <div class="row row-center" style="text-align:center">
+	          <div class="col col-50"><b>Price: </b><span>{{p.totalAmount | currency:"Php. "}}</span></div>
+	          <div class="col col-50"><b style="color:orange;">Status</b><br><span style="color:orange;">On Delivery</span></div>
+	        </div>
+	      </a>
+	    </div>
+	  </ion-content>
+	</ion-view>

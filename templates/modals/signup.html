@@ -1,0 +1,39 @@
+<ion-modal-view ng-controller="ProvinceCtrl">
+	<ion-header-bar>
+	  <h1 class="title">{{myTitle}}</h1>
+	  <div class="button button-clear" ng-click="modal.hide()">
+	  	<span class="icon ion-close"></span>
+	  </div>
+	</ion-header-bar>
+	<ion-content>
+		<div class="list">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Email</span>
+		    <input type="email" placeholder="Email" ng-model="regData.username">
+		  </label>
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Password</span>
+		    <input type="password" placeholder="Password" ng-model="regData.password">
+		  </label>
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Confirm Password</span>
+		    <input type="password" placeholder="Confirm Password" ng-model="regData.cpassword">
+		  </label>
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">First Name</span>
+		    <input type="text" placeholder="First Name" ng-model="regData.fname">
+		  </label>
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Last Name</span>
+		    <input type="text" placeholder="Last Name" ng-model="regData.lname">
+		  </label>
+		  <br>
+			<div class="padding">
+			  <input type="checkbox" ng-model="checkModel.isAgree"> Agree to terms and agreement
+			  <button class="button button-block button-positive" ng-click="createAccount()">
+			  	Create Account
+			  </button>
+			</div>
+		</div>
+	</ion-content>
+</ion-modal-view>

@@ -1,0 +1,17 @@
+<ion-modal-view>
+	<ion-header-bar>
+	  <h1 class="title">{{myTitle}}</h1>
+	  <div class="button button-clear" ng-click="modal.hide()">
+	  	<span class="icon ion-close"></span>
+	  </div>
+	</ion-header-bar>
+	<ion-content>
+	  <div class="list">
+	    <a class="item item-avatar" href="#" ng-click="setMerchant({{lm.merchantid}})" ng-repeat="lm in listMerchant">
+	      <img src="{{lm.merchantimg}}">
+	      <h2>{{lm.merchantname}}</h2>
+	      <p>{{lm.merchantaddress}}</p>
+	    </a>
+	</div>
+	</ion-content>
+</ion-modal-view>

@@ -1,0 +1,27 @@
+<ion-view view-title="Login" align-title="left" drag-content="false" hide-nav-bar="true">
+    <ion-content style="background:#1a237e;">
+        <div class="header-login">
+            <img src="img/smartd-96.png" alt="SmartD" class="animated bounceIn slow">
+            <h2 style="text-align:center" class="animated bounceIn slow">Smart-D</h2>
+            <form class="padding">
+            	<div class="button-bar center-block-button button-selection" style="max-width:800px;">
+            		<a class="button button-small" ng-class="{'button-positive': isActive('customer')}" ng-click="setActive('customer')" >Customer</a>
+            		<a class="button button-small" ng-class="{'button-positive': isActive('delivery')}" ng-click="setActive('delivery')" >Delivery Crew</a>
+            	</div>
+                <br>
+            	<label for="username" class="login-form" style="position:relative">
+            		<span>Username</span>
+            		<input id="username" type="text" placeholder="Username" ng-model="formData.user">
+            	</label>
+
+            	<label for="password" class="login-form">
+            		<span style="margin-top:15px;">Password</span>
+            		<input id="password" type="password" placeholder="Password" ng-model="formData.pass">
+            	</label>
+                <br>
+                <button class="button button-block button-flat button-positive button-small" ng-click="loginCustomer()">LOGIN</button>
+                <button class="button button-block button-flat button-positive button-small" ng-click="openSignUp()">SIGNUP</button>
+			</form>
+        </div>
+    </ion-content>
+</ion-view>

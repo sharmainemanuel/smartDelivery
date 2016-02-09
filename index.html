@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/controllers/AppControl.js"></script>
+    <script src="js/controllers/SideControl.js"></script>
+    <script src="js/controllers/AccountControl.js"></script>
+    <script src="js/controllers/DeliveryControl.js"></script>
+    <script src="js/controllers/ModalControl.js"></script>
+    <script src="js/controllers/LoginControl.js"></script>
+    <script src="js/controllers/DashControl.js"></script>
+    <script src="js/controllers/DeliveredControl.js"></script>
+    <script src="js/controllers/DeliveryDashControl.js"></script>
+    <script src="js/controllers/ProfileControl.js"></script>
+    <script src="js/controllers/ListControl.js"></script>
+    <script src="js/controllers/LocationControl.js"></script>
+    <script src="js/controllers/DeliveryAccountControl.js"></script>
+    <script src="js/controllers/ProductProfileControl.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/services/localstorage.js"></script>
+  </head>
+  <body ng-app="starter" ng-controller="AppCtrl" >
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+  <ion-side-menus>
+    <!-- Right menu -->
+    <ion-side-menu side="right"  class="dark-theme-background" style="padding-top:40px;" width="270">
+      <div class="bar bar-header dark-theme-card-whiter">
+          <h1 class="title title-left text-white">My Cart</h1>
+          <h4 class="title title-right text-white" style="line-height:30%;"><span class="mybadge">{{carttotal}}</span></h4>
+        </div>
+        <div class="item item-divider">
+          <div class="row">
+            <div class="col-80">Item</div>
+            <div class="col-20">Quantity</div>
+          </div>
+        </div>
+        <ion-list can-swipe="true">
+          <ion-item ng-repeat="x in cart">
+            <img src="{{x.pimage}}" style="max-width:50px;display:inline-block;vertical-align:middle">
+            <h3 style="display:inline-block;margin-left:10px;">{{x.productname}}</h3>
+            <span class="badge badge-assertive" style="margin-top:15px;margin-right:-10px;">{{x.qty}}</span>
+            <ion-option-button class="button-calm" 
+                               ng-click="updateItem(x.productid)" style="width:70px;">
+              <span class="icon-update icon-3x" style="margin-top:5px;"></span>
+            </ion-option-button>
+            <ion-option-button class="button-assertive"
+                               ng-click="deleteItem(x.productid)" style="width:70px;">
+              <span class="icon-close icon-3x" style="margin-left:5px;margin-top:0px"></span>
+            </ion-option-button>
+          </ion-item>
+        </ion-list>
+        </div>
+      <div class="tabs-striped">
+        <div class="tabs tabs-icon-left dark-theme-card-whiter" style="padding:-3px auto;border:none">
+          <div class="row" style="margin:-2px;padding:0;">
+            <div class="col " style="margin:0;padding:0;">
+              <a class="button button-full button-positive" ng-href="#/delivery" ng-click="checkout()" style="margin:0">
+                <span class="icon-check icon-2x"></span>
+              </a>
+            </div>
+            <div class="col col-67">
+              <h4 class="text-white" style="text-align:center">{{cartamount | currency:"Php. "}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-side-menu>
+
+    <ion-side-menu-content ng-controller="SideCtrl">
+    <!-- Main content, usually <ion-nav-view> -->
+      <ion-nav-bar class="bar-positive" hide-nav-bar="false">
+        <ion-nav-back-button >
+          <i class="ion-arrow-left-c"></i>
+        </ion-nav-back-button>
+      
+        <ion-nav-buttons side="left">
+        
+        </ion-nav-buttons>
+
+        <ion-nav-buttons side="right">
+          <button class="button button-icon button-right button-clear ion-navicon" ng-click="toggleRight()"></button>
+        </ion-nav-buttons>
+      </ion-nav-bar>
+      <ion-nav-view></ion-nav-view>
+    </ion-side-menu-content>
+
+  </ion-side-menus>
+  </body>
+</html>

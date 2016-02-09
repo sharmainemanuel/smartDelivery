@@ -1,0 +1,29 @@
+<ion-view view-title="Delivery Info">
+  <ion-nav-buttons side="left">
+    <button class="button" ng-click="$ionicGoBack()"><i class="ion-arrow-left-c"></i> Back</button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">House No.</span>
+        <input type="tel" placeholder="House No." ng-model="payment.house">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Street</span>
+        <input type="text" placeholder="Street" ng-model="payment.street">
+      </label>
+      <br>
+      <h4 class="padding">Payment Method</h4>
+      <form class="padding">
+        <input type="radio" name="pay" ng-model="payment.paypal" value="cod" checked="true"/>Cash on Delivery <br><br>
+        <input type="radio" name="pay" ng-model="payment.paypal" value="paypal"/>Paypal
+      </form>
+    </div>
+    <div class="padding">
+      <button class="button button-positive button-block" ng-click="confirmDelivery()">Confirm</button>
+    </div>
+  </ion-content>
+</ion-view>

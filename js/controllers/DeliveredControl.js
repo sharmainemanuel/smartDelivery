@@ -9,10 +9,10 @@ app.controller('DeliveredCtrl',['$rootScope', '$scope','$ionicModal','$http','$l
 			localStorage.setItem("deliveredItem",storage);
 			$rootScope.delivered = JSON.parse(localStorage.getItem("deliveredItem"));
 			var cstmer = $localDb.getUserId();			
-			$http.post("http://localhost/smartd/__getorders.php",{customer:cstmer}).then(onOrderComplete);
+			$http.post("http://iligtas.ph/smartDelivery/smartd/__getorders.php",{customer:cstmer}).then(onOrderComplete);
 		}
 		var storages = JSON.parse(localStorage.getItem("userlog"));
-	  	$http.post("http://localhost/smartd/__getdelivered.php",{deliveryman:storages[0].deliveryid}).then(onRequestSuccess).finally(function() {
+	  	$http.post("http://iligtas.ph/smartDelivery/smartd/__getdelivered.php",{deliveryman:storages[0].deliveryid}).then(onRequestSuccess).finally(function() {
 	       // Stop the ion-refresher from spinning
 	       $scope.$broadcast('scroll.refreshComplete');
 	     });

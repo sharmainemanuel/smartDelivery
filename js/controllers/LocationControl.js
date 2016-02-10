@@ -84,7 +84,7 @@ app.controller('LocationCtrl',['$scope', '$rootScope','$ionicModal','$http','$lo
 			var item = JSON.parse(localStorage.getItem("userlog"));
 			$scope.location.customerid = item[0].userid;
 			console.log($scope.location);
-			$http.post("http://localhost/smartd/__changelocation.php",$scope.location).then(onChangeComplete);	
+			$http.post("http://iligtas.ph/smartDelivery/smartd/__changelocation.php",$scope.location).then(onChangeComplete);	
 		}  		
 	  }
 }]);

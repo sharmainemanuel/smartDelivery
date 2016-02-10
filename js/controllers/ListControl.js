@@ -17,5 +17,5 @@ app.controller('ListCtrl',['$scope', '$rootScope','$stateParams','$http','$local
 	var onRequestFailed = function(error){
 		console.log("Error.");
 	};
-	$http.post("http://localhost/smartd/__getproducts.php",{category:uid,merchant:mid[0].merchantid}).then(onRequestComplete);
+	$http.post("http://iligtas.ph/smartDelivery/smartd/__getproducts.php",{category:uid,merchant:mid[0].merchantid}).then(onRequestComplete);
 }]);

@@ -42,7 +42,7 @@ app.controller('LoginCtrl',['$scope','$ionicModal','$http','$localDb','$rootScop
 			$rootScope.enableSide();
 		}
 		var cstmer = $localDb.getUserId();			
-		$http.post("http://localhost/smartd/__getorders.php",{customer:cstmer}).then(onOrderComplete);
+		$http.post("http://iligtas.ph/smartDelivery/smartd/__getorders.php",{customer:cstmer}).then(onOrderComplete);
 		$scope.showLoad();
   	}
   	if(localStorage.getItem("userlog")!=null&&JSON.parse(localStorage.getItem("userlog"))[0].usertype=="delivery"){
@@ -94,11 +94,11 @@ app.controller('LoginCtrl',['$scope','$ionicModal','$http','$localDb','$rootScop
 	  	var user = $scope.formData.user;
 		var pass = $scope.formData.pass;
 		if($scope.active=="customer"){
-			$http.post("http://localhost/smartd/__login.php",{username:user,password:pass}).then(onUserCompleteUser);	
+			$http.post("http://iligtas.ph/smartDelivery/smartd/__login.php",{username:user,password:pass}).then(onUserCompleteUser);	
 		}
 		if($scope.active=="delivery"){
 			$scope.showLoadLog();
-			$http.post("http://localhost/smartd/__logindeliver.php",{username:user,password:pass}).then(onDeliveryCompleteUser);	
+			$http.post("http://iligtas.ph/smartDelivery/smartd/__logindeliver.php",{username:user,password:pass}).then(onDeliveryCompleteUser);	
 		}
 	 };
 
@@ -120,7 +120,7 @@ app.controller('LoginCtrl',['$scope','$ionicModal','$http','$localDb','$rootScop
 				$location.path('/tab/dash');
 			}
 			var cstmer = $localDb.getUserId();			
-			$http.post("http://localhost/smartd/__getorders.php",{customer:cstmer}).then(onOrderComplete);
+			$http.post("http://iligtas.ph/smartDelivery/smartd/__getorders.php",{customer:cstmer}).then(onOrderComplete);
 		}
 		else{
 			console.log("Account Doesnt Exist");
@@ -142,7 +142,7 @@ app.controller('LoginCtrl',['$scope','$ionicModal','$http','$localDb','$rootScop
 				$scope.hideLoad();
 				$location.path('/tabdelivery/ddash');
 			}
-			$http.post("http://localhost/smartd/__getdelivered.php",{deliveryman:delivert}).then(onRequestSuccess);
+			$http.post("http://iligtas.ph/smartDelivery/smartd/__getdelivered.php",{deliveryman:delivert}).then(onRequestSuccess);
 			$ionicHistory.clearHistory();
 			$ionicHistory.clearCache();
 		    //REMOVE BACK BUTTON ON THE REDIRECT PAGE

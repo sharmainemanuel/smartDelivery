@@ -10,7 +10,7 @@ app.controller('DeliveryDashCtrl',['$scope', '$rootScope','$ionicLoading','$http
 			$scope.haha = responses.data;
 			console.log($scope.haha);
 		}
-	$http.post("http://localhost/smartd/__getdispatch.php",{deliveryman:storage[0].deliveryid}).then(onRequestSuccess);
+	$http.post("http://iligtas.ph/smartDelivery/smartd/__getdispatch.php",{deliveryman:storage[0].deliveryid}).then(onRequestSuccess);
 
 	$ionicModal.fromTemplateUrl('templates/modals/view-orders.html', {
 	    scope: $scope,
@@ -23,7 +23,7 @@ app.controller('DeliveryDashCtrl',['$scope', '$rootScope','$ionicLoading','$http
 	  $scope.openModal = function(title,dop,customer) {
 	    $scope.myTitle = title;
 	    $scope.modal.show();
-	    $http.post("http://localhost/smartd/__getordersingle.php",{deliveryman:storage[0].deliveryid,dpurchase:dop,customer:customer}).then(onDeliverSuccess);
+	    $http.post("http://iligtas.ph/smartDelivery/smartd/__getordersingle.php",{deliveryman:storage[0].deliveryid,dpurchase:dop,customer:customer}).then(onDeliverSuccess);
 	  };
 	  $scope.closeModal = function() {
 	    $scope.modal.hide();
@@ -43,7 +43,7 @@ app.controller('DeliveryDashCtrl',['$scope', '$rootScope','$ionicLoading','$http
 	  });
 
 	  $scope.doRefresh = function() {
-	  	$http.post("http://localhost/smartd/__getdispatch.php",{deliveryman:storage[0].deliveryid}).then(onRequestSuccess).finally(function() {
+	  	$http.post("http://iligtas.ph/smartDelivery/smartd/__getdispatch.php",{deliveryman:storage[0].deliveryid}).then(onRequestSuccess).finally(function() {
 	       // Stop the ion-refresher from spinning
 	       $scope.$broadcast('scroll.refreshComplete');
 	     });

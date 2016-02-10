@@ -11,7 +11,7 @@ app.controller('DashCtrl',['$scope', '$rootScope','$ionicLoading','$http','$loca
 	};
 	$scope.acceptDeliver = function(dop){
 		var storage = JSON.parse(localStorage.getItem("userlog"));
-		$http.post("http://localhost/smartd/__acceptorders.php",{pdate:dop,customer:storage[0].userid}).then(onSuc);
+		$http.post("http://iligtas.ph/smartDelivery/smartd/__acceptorders.php",{pdate:dop,customer:storage[0].userid}).then(onSuc);
 		$scope.closeModal();
 	}
 	var onDeliverSuccess = function(responses){
@@ -32,7 +32,7 @@ app.controller('DashCtrl',['$scope', '$rootScope','$ionicLoading','$http','$loca
 	  	var storage = JSON.parse(localStorage.getItem("userlog"));
 	    $scope.myTitle = title;
 	    $scope.modal.show();
-	    $http.post("http://localhost/smartd/__getordercustomer.php",{dpurchase:dop,customer:storage[0].userid}).then(onDeliverSuccess);
+	    $http.post("http://iligtas.ph/smartDelivery/smartd/__getordercustomer.php",{dpurchase:dop,customer:storage[0].userid}).then(onDeliverSuccess);
 	  };
 	  $scope.closeModal = function() {
 	    $scope.modal.hide();
@@ -57,11 +57,11 @@ app.controller('DashCtrl',['$scope', '$rootScope','$ionicLoading','$http','$loca
 	  $scope.pending = response.data;
 	};
 
-	$http.post("http://localhost/smartd/__getPending.php",{customer:uid}).then(onRequestComplete);
+	$http.post("http://iligtas.ph/smartDelivery/smartd/__getPending.php",{customer:uid}).then(onRequestComplete);
 	$scope.orders = $localDb.getReceiveOrders();
 
 	$scope.doRefresh = function() {
-	  	$http.post("http://localhost/smartd/__getPending.php",{customer:uid}).then(onRequestComplete).finally(function() {
+	  	$http.post("http://iligtas.ph/smartDelivery/smartd/__getPending.php",{customer:uid}).then(onRequestComplete).finally(function() {
 	       // Stop the ion-refresher from spinning
 	       $scope.$broadcast('scroll.refreshComplete');
 	     });

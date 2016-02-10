@@ -18,7 +18,7 @@ app.controller('ProductProfileCtrl',['$scope', '$rootScope','$stateParams','$htt
 		console.log($scope.product);
 	}
 	else{
-		$http.post("http://localhost/smartd/__getproduct.php",{productid:pid}).then(onRequestComplete);
+		$http.post("http://iligtas.ph/smartDelivery/smartd/__getproduct.php",{productid:pid}).then(onRequestComplete);
 	}
 
 	$scope.incrementQty = function(){

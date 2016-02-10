@@ -19,7 +19,7 @@ app.controller('DeliveryAccountCtrl',['$scope', '$rootScope','$ionicModal','$htt
 			$scope.statuses=0;
 		}
 		var dm = JSON.parse(localStorage.getItem("userlog"))[0].deliveryid;
-		$http.post("http://localhost/smartd/__updatestatus.php",{stats:$scope.statuses,deliveryman:dm}).then(onRequestComplete);	
+		$http.post("http://iligtas.ph/smartDelivery/smartd/__updatestatus.php",{stats:$scope.statuses,deliveryman:dm}).then(onRequestComplete);	
 	};
 
 	$scope.logOut = function(){

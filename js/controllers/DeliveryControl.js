@@ -70,7 +70,7 @@ app.controller('DeliveryCtrl',['$rootScope', '$scope','$ionicModal','$http','$lo
 	       var mycart = $localDb.cartGetItem();
 	    	var mydta = $localDb.userGetItem();
 	    	var myaddress = $scope.payment.house + " " + $scope.payment.street + " " + mydta[0].city + ", " + mydta[0].zip;
-	    	$http.post("http://localhost/smartd/__order.php",{items:mycart,address:myaddress,customer:mydta[0].userid,city:mydta[0].city,merchant:mydta[0].merchantid}).then(onDeliverComplete);
+	    	$http.post("http://iligtas.ph/smartDelivery/smartd/__order.php",{items:mycart,address:myaddress,customer:mydta[0].userid,city:mydta[0].city,merchant:mydta[0].merchantid}).then(onDeliverComplete);
 	       $scope.showAlert();
 	     } else {
 	       console.log('You are not sure');

@@ -33,7 +33,7 @@ app.controller('AccountCtrl',['$scope', '$rootScope','$ionicModal','$http','$loc
 	 }
 
 	  var myzip = $localDb.getUserZip();
-	  $http.post("http://iligtas.ph/smartDelivery/smartd/__getmerchant.php",{zipcode:myzip}).then(onUserCompleteUser);
+	  $http.post("http://localhost/smartd/__getmerchant.php",{zipcode:myzip}).then(onUserCompleteUser);
 
 	  $scope.setMerchant = function(id){
 	  	var onChangeComplete = function(response){
@@ -47,7 +47,7 @@ app.controller('AccountCtrl',['$scope', '$rootScope','$ionicModal','$http','$loc
 		 	$rootScope.updateCarts();
 		 }
 	  	var cstomer = $localDb.userGetItem();
-	  	$http.post("http://iligtas.ph/smartDelivery/smartd/__changemerchant.php",{userid:cstomer[0].userid,mid:id}).then(onChangeComplete);
+	  	$http.post("http://localhost/smartd/__changemerchant.php",{userid:cstomer[0].userid,mid:id}).then(onChangeComplete);
 	  }
 	  $scope.logOut = function(){
 	  	$ionicHistory.clearHistory();

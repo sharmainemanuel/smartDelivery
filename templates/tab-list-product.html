@@ -17,9 +17,9 @@
 	        {{product_title}}
 	      </div>
 	      <a class="item item-thumbnail-left" ng-repeat="x in products | filter:searchProduct" ng-href="#/tab/list/product/profile/{{x.productid}}">
-	      	<img src="{{x.pimage}}">
+	      	<img src="http://iligtas.ph/smartDelivery/smartd/admin/methods/{{x.pimage}}">
 	      	<h2>{{x.productname}}</h2>
-	      	<p>{{x.pprice}}</p>
+	      	<p>{{x.pprice | currency:"Php. "}}</p>
 	      </a>
 	    </ion-list>            
     </ion-content>

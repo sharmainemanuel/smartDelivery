@@ -30,7 +30,6 @@ app.controller('AppCtrl',['$scope', '$rootScope','$ionicSideMenuDelegate','$wind
   $scope.cartamount = $localDb.cartTotalAmount();
   $rootScope.updateCarts = function(){
   	$scope.cart = $localDb.cartGetItem();
-  	console.log($scope.cart);
   	$scope.carttotal = $localDb.cartTotal();
   	$scope.cartamount = $localDb.cartTotalAmount();
   }

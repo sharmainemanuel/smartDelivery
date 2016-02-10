@@ -94,6 +94,7 @@ app.controller('LoginCtrl',['$scope','$ionicModal','$http','$localDb','$rootScop
 	  	var user = $scope.formData.user;
 		var pass = $scope.formData.pass;
 		if($scope.active=="customer"){
+			$scope.showLoadLog();
 			$http.post("http://iligtas.ph/smartDelivery/smartd/__login.php",{username:user,password:pass}).then(onUserCompleteUser);	
 		}
 		if($scope.active=="delivery"){
@@ -114,12 +115,22 @@ app.controller('LoginCtrl',['$scope','$ionicModal','$http','$localDb','$rootScop
 		    });
 			var onOrderComplete = function(response){
 				console.log(response.data);
-				$rootScope.enableSide();
-				$localDb.setReceiveOrders(response.data);	
-				$rootScope.updateUser();
-				$location.path('/tab/dash');
-			}
-			var cstmer = $localDb.getUserId();			
+				if(response.data!="null"){
+					$rootScope.enableSide();
+					$localDb.setReceiveOrders(response.data);	
+					$rootScope.updateUser();
+					$scope.hideLoad();
+					$location.path('/tab/dash');
+				}
+				else{
+					var storage = [];
+					$localDb.setReceiveOrders(storage);
+					$rootScope.updateUser();
+					$scope.hideLoad();
+					$location.path('/tab/dash');	
+				}
+			}			
+			var cstmer = $localDb.getUserId();
 			$http.post("http://iligtas.ph/smartDelivery/smartd/__getorders.php",{customer:cstmer}).then(onOrderComplete);
 		}
 		else{

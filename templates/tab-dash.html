@@ -4,9 +4,25 @@
         pulling-text="Pull to refresh..."
         on-refresh="doRefresh()">
       </ion-refresher>
-    <div class="list card" ng-repeat="p in pending" ng-click="openModal('View Orders',p.purchaseDate)">
+
+    <div class="list card" ng-repeat="o in ondeliver" ng-click="openModal('View Orders',o.purchaseDate)">
       <div class="item item-avatar">
-        <img src="{{p.productImg}}">
+        <img src="http://iligtas.ph/smartDelivery/smartd/admin/methods/{{o.productImg}}">
+        <h2>{{o.merchantName}}</h2>
+        <p>{{o.merchantAddress}}</p>
+      </div>
+
+      <a class="item item-icon-left assertive" style="padding:0" href="#">
+        <div class="row row-center" style="text-align:center">
+          <div class="col col-50"><b>Price: </b><span>{{o.totalAmount | currency:"Php. "}}</span></div>
+          <div class="col col-50"><b style="color:orange;">Status</b><br><span style="color:orange;">On Delivery</span></div>
+        </div>
+      </a>
+    </div>
+
+    <div class="list card" ng-repeat="p in pending" ng-click="getOrderList('View Orders',p.purchaseDate)">
+      <div class="item item-avatar">
+        <img src="http://iligtas.ph/smartDelivery/smartd/admin/methods/{{p.productImg}}">
         <h2>{{p.merchantName}}</h2>
         <p>{{p.merchantAddress}}</p>
       </div>
@@ -14,14 +30,14 @@
       <a class="item item-icon-left assertive" style="padding:0" href="#">
         <div class="row row-center" style="text-align:center">
           <div class="col col-50"><b>Price: </b><span>{{p.totalAmount | currency:"Php. "}}</span></div>
-          <div class="col col-50"><b style="color:orange;">Status</b><br><span style="color:orange;">Pending</span></div>
+          <div class="col col-50"><b class="assertive">Status</b><br><span class="assertive">Pending</span></div>
         </div>
       </a>
     </div>
 
-    <div class="list card" ng-repeat="order in orders">
+    <div class="list card" ng-repeat="order in orders" ng-click="getOrderList2('View Orders',order.purchaseDate)">
       <div class="item item-avatar">
-        <img src="{{order.productImg}}">
+        <img src="http://iligtas.ph/smartDelivery/smartd/admin/methods/{{order.productImg}}">
         <h2>{{order.merchantName}}</h2>
         <p>{{order.merchantAddress}}</p>
       </div>

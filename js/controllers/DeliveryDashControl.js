@@ -1,6 +1,5 @@
 app.controller('DeliveryDashCtrl',['$scope', '$rootScope','$ionicLoading','$http','$localDb','$timeout','$ionicModal',function($scope,$rootScope,$ionicLoading,$http,$localDb,$timeout,$ionicModal){
 	var storage = JSON.parse(localStorage.getItem("userlog"));
-	
 	$scope.haha = null;
 	var onRequestSuccess = function(response){
 		console.log(response.data);
@@ -11,10 +10,8 @@ app.controller('DeliveryDashCtrl',['$scope', '$rootScope','$ionicLoading','$http
 			$scope.haha = responses.data;
 			console.log($scope.haha);
 		}
-		var dm = storage[0].deliveryid;
-	$http.post("http://iligtas.ph/smartDelivery/smartd/__getdispatch.php?id="+dm,{deliveryman:storage[0].deliveryid}).then(onRequestSuccess);
+	$http.post("http://iligtas.ph/smartDelivery/smartd/__getdispatch.php",{deliveryman:storage[0].deliveryid}).then(onRequestSuccess);
 
-	console.log(storage[0].deliveryid);
 	$ionicModal.fromTemplateUrl('templates/modals/view-orders.html', {
 	    scope: $scope,
 	    animation: 'slide-in-up',
@@ -26,6 +23,8 @@ app.controller('DeliveryDashCtrl',['$scope', '$rootScope','$ionicLoading','$http
 	  $scope.openModal = function(title,dop,customer) {
 	    $scope.myTitle = title;
 	    $scope.modal.show();
+	    var storage = JSON.parse(localStorage.getItem("userlog"));
+	    console.log(storage);
 	    $http.post("http://iligtas.ph/smartDelivery/smartd/__getordersingle.php",{deliveryman:storage[0].deliveryid,dpurchase:dop,customer:customer}).then(onDeliverSuccess);
 	  };
 	  $scope.closeModal = function() {

@@ -25,7 +25,7 @@
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="16" />
     
-    <icon src="img/smartd.png" />
+    <icon src="img/icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="img/icons/smartd-36.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="img/icons/smartd-48.png" />
     <icon gap:platform="android" gap:qualifier="hdpi" src="img/icons/smartd-72.png" />

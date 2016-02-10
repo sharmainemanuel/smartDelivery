@@ -1,5 +1,6 @@
 app.controller('DeliveryDashCtrl',['$scope', '$rootScope','$ionicLoading','$http','$localDb','$timeout','$ionicModal',function($scope,$rootScope,$ionicLoading,$http,$localDb,$timeout,$ionicModal){
 	var storage = JSON.parse(localStorage.getItem("userlog"));
+	
 	$scope.haha = null;
 	var onRequestSuccess = function(response){
 		console.log(response.data);
@@ -10,8 +11,10 @@ app.controller('DeliveryDashCtrl',['$scope', '$rootScope','$ionicLoading','$http
 			$scope.haha = responses.data;
 			console.log($scope.haha);
 		}
-	$http.post("http://iligtas.ph/smartDelivery/smartd/__getdispatch.php",{deliveryman:storage[0].deliveryid}).then(onRequestSuccess);
+		var dm = storage[0].deliveryid;
+	$http.post("http://iligtas.ph/smartDelivery/smartd/__getdispatch.php?id="+dm,{deliveryman:storage[0].deliveryid}).then(onRequestSuccess);
 
+	console.log(storage[0].deliveryid);
 	$ionicModal.fromTemplateUrl('templates/modals/view-orders.html', {
 	    scope: $scope,
 	    animation: 'slide-in-up',
